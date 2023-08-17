@@ -10,7 +10,6 @@ describe("Pruebas rutas Proyecto plantas", ()=>{
       });
 
 
-
     it("agregar un usuario y devuelve un 200", async()=>{
         const nuevoUsuario={
             "id": 5,
@@ -23,7 +22,10 @@ describe("Pruebas rutas Proyecto plantas", ()=>{
         expect(statusCode).toBe(200)
     })
 
-    
+    it("obteniendo Objeto", async()=>{
+        const response=await request(server).get("/usuarios").send()
+        expect(response.body).toBeInstanceOf(Object);
+    })
 
 
 })
