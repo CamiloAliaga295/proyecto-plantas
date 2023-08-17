@@ -27,7 +27,11 @@ describe("Pruebas rutas Proyecto plantas", ()=>{
         expect(response.body).toBeInstanceOf(Object);
     })
       
-
+    it("Status code 201 al iniciar sesion correctamente", async () => {
+      const usuario = {email: "camilo@gmail.com", password: "12345" };
+      const res = await request(server).post("/login").send(usuario);
+      expect(res.status).toBe(200);
+    });
 
     });
 
