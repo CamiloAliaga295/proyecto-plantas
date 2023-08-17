@@ -3,20 +3,21 @@ body {
     margin: 70px;
 }
 
-input {
-    max-width: 40%;
-    margin-left: 335px;
-
+.form-control {
+    width: 350px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    text-align:center
-}
-
-form{
-    margin:30px auto;
-}
-
-button {
-    max-width: 30%
+.btn {
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+   
 }

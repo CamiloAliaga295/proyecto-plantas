@@ -7,7 +7,9 @@ const Login = () => {
   const [email, setEmail]=useState('')
   const[password, setPassword]=useState('')
 
-  const iniciarSesion= async (e)=>{
+
+  const iniciarSesion= async (e)=> {
+
     e.preventDefault();
     try {
       const response= await axios.post("http://localhost:3000/login", {
