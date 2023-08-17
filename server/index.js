@@ -1,4 +1,5 @@
 const express=require('express')
+require("dotenv").config()
 const router=require('./routes/routes')
 const cors=require('cors')
 
@@ -13,3 +14,5 @@ app.use('/', router)
 app.listen(PORT, (req,res)=>{
     console.log(`Servidor correcto en el puerto ${PORT}`)
 })
+
+module.exports=app

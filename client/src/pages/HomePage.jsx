@@ -8,11 +8,11 @@ const HomePage = () => {
   return (
     <div>
       <div>
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-          <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 fw-normal">Bienvenidos a Plantacenter <span>🪴</span></h1>
-            <p class="lead fw-normal">Aquí podrás econtrar las mejores plantas para tu hogar!</p>
-            <a class="btn btn-outline-secondary" href="#">Próximamente</a>
+        <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+          <div className="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 className="display-4 fw-normal">Bienvenidos a Plantacenter <span>🪴</span></h1>
+            <p className="lead fw-normal">Aquí podrás econtrar las mejores plantas para tu hogar!</p>
+            <a className="btn btn-outline-secondary" href="#">Próximamente</a>
           
           <img src="" alt="" />
         </div>

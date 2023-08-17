@@ -1,12 +1,13 @@
 const express= require('express')
-require('dotenv').config();
 const jwt = require('jsonwebtoken');
-
 const router=express.Router();
+require('dotenv').config();
 
 const  {registrarUsuario, obtenerDatosUsuario, verificarCredenciales}= require('../consultas/consultas')
 
 const {checkCredentialExist, verificacionToken} = require('../middlewares/middlewares')
+
+router.use(express.json());
 
 
 router.get('/', (req,res)=>{

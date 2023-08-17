@@ -1,31 +1,44 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios"
 
 const Login = () => {
-  const [correo, setCorreo] = useState("");
-  const [contraseña, setContraseña] = useState("");
+  const navigate=useNavigate();
+  const [email, setEmail]=useState('')
+  const[password, setPassword]=useState('')
 
-  const [error, setError] = useState(false);
-
-  const handleSubmit = (e) => {
+  const iniciarSesion= async (e)=>{
     e.preventDefault();
+    try {
+      const response= await axios.post("http://localhost:3000/login", {
+        email,
+        password
+      })
 
-    if (correo === "" || contraseña === "") {
-      setError(true);
-      return;
+    if (response.status ===200){
+      const {token} = response.data;
+      localStorage.setItem("token", token);
+      alert("Ingreso correcto")
+      navigate("/miperfil")
+    } else {
+      alert("Hubo un error")
     }
-  };
+                
+    } catch (error) {
+      alert('Hubo un error')
+      console.log(error.message)
+    }
+  }
+   
+ 
 
   return (
     <div>
       <h1 className="text-center mt-5">Iniciar sesion</h1>
 
-      <form className="formulario" onSubmit={handleSubmit}>
-        {error ? (
-          <p className="alert alert-danger text-center ms-5">
-            Datos incorrectos
-          </p>
-        ) : null}
-
+      <form className="formulario" >
+        
+          
         <div className="mb-3 ms-5  me-5 col-xs-4 text-center">
           <label className="form-label">Correo electronico</label>
           <input
@@ -33,8 +46,8 @@ const Login = () => {
             className="form-control"
             id="email"
             placeholder="Ingresa tu correo"
-            value={correo}
-            onChange={(e) => setCorreo(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -45,14 +58,14 @@ const Login = () => {
             className="form-control"
             id="password"
             placeholder="Ingresa tu contraseña"
-            value={contraseña}
-            onChange={(e) => setContraseña(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
         <button
-          type="submit"
           className="btn btn-success d-grid gap-2 col-6 mx-auto"
+          onClick={iniciarSesion}
         >
           Iniciar Sesión
         </button>
