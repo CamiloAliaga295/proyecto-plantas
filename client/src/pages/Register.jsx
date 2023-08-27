@@ -13,7 +13,7 @@ const Register = () => {
     try {
       const body = { nombre, email, direccion, password }
       console.log('cuerpo', body)
-      await fetch('https://backend-pc.onrender.com/register', {
+      await fetch('https://backend-pc.onrender.com/usuarios', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
