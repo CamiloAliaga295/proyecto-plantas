@@ -1,5 +1,5 @@
 import AppRouter from "./components/AppRouter"
-import NavBar from "./components/Navbar"
+import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 import React, {useState} from 'react'
 import { MyContext } from "./context/MyContext"

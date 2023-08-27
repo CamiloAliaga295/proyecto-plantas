@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+const NavBar = () => {
   return (
 
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -38,5 +38,5 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavBar
 
